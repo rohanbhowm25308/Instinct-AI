@@ -1,0 +1,6 @@
+Flask
+requests
+pypdf
+bandit
+gunicorn
+python-dotenv

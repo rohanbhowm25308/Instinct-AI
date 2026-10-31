@@ -1,0 +1,17 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Access • INSTINCT AI</title><link rel="stylesheet" href="/static/auth.css"></head><body data-mode="{{ mode }}">
+<canvas id="auth-particles" aria-hidden="true"></canvas><div class="auth-aurora" aria-hidden="true"></div>
+<main class="auth-shell"><div class="top-brand"><span class="diamond">✦</span> INSTINCT <b>AI</b><small>SECURE TRUST INTELLIGENCE</small></div>
+<div class="flip-stage"><div class="glass-card" id="glass"><div class="flip-back" aria-hidden="true"><div class="flip-orb"><span>✦</span></div></div><div class="corner c1"></div><div class="corner c2"></div><div class="card-inner" id="card-inner">
+<section class="auth-view" data-view="login" {% if mode == 'signup' %}hidden{% endif %} aria-label="Sign in">
+<h1>Welcome Back</h1><p class="sub">Enter your credentials to access your secure account.</p>
+{% if error and mode == 'login' %}<div class="error" role="alert">{{ error }}</div>{% endif %}
+<form method="post" action="/login"><label>Email Address<input type="email" name="email" placeholder="name@domain.com" autocomplete="email" required></label><label>Password<div class="pw"><input name="password" type="password" placeholder="••••••••••" autocomplete="current-password" required><button type="button" class="eye" aria-label="Show password">◉</button></div></label>
+<div class="options"><label class="check"><input type="checkbox" name="remember"> Remember me</label><span class="muted">Secure local sign in</span></div><button class="submit" type="submit">Sign In <span>➜</span></button></form>
+<div class="switch">Don't have an account? <a href="/signup" data-switch="signup">Sign Up</a></div></section>
+<section class="auth-view" data-view="signup" {% if mode != 'signup' %}hidden{% endif %} aria-label="Create account">
+<h1>Create Account</h1><p class="sub">Join us today to access your secure workspace.</p>
+{% if error and mode == 'signup' %}<div class="error" role="alert">{{ error }}</div>{% endif %}
+<form method="post" action="/signup"><label>Full Name<input name="name" placeholder="Alex Johnson" autocomplete="name" minlength="2" required></label><label>Email Address<input type="email" name="email" placeholder="name@domain.com" autocomplete="email" required></label><div class="password-row"><label>Password<div class="pw"><input name="password" type="password" placeholder="••••••••••" autocomplete="new-password" minlength="10" required><button type="button" class="eye" aria-label="Show password">◉</button></div></label><label>Confirm Password<div class="pw"><input name="confirm" type="password" placeholder="••••••••••" autocomplete="new-password" minlength="10" required><button type="button" class="eye" aria-label="Show password">◉</button></div></label></div><div class="options"><label class="check"><input type="checkbox" name="terms" required> I agree to the Terms &amp; Privacy Policy</label></div><button class="submit" type="submit">Create Account <span>➜</span></button></form>
+<div class="switch">Already have an account? <a href="/login" data-switch="login">Sign In</a></div></section>
+</div></div></div><div class="foot">ENCRYPTED PASSWORDS <span>◆</span> PRIVATE WORKSPACE <span>◆</span> INSTINCT AI</div>
+</main><script src="/static/auth.js"></script></body></html>
